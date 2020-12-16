@@ -1,40 +1,201 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+    <title>The Seduction Stories postmortem</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme">
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h2>Hello, hi</h2>
+                <aside class="notes">
+                    Hi everybody, today I'm going to tell you how we created a beautiful romance game for mobile.
+                    How we did it with a very tiny team and a small budget.
+                    How we got featured by Apple.
+                    Multiple times!
+                    How we got published by PlugIn Digital!
+                    How Google called us to help us do user acquisition!
+                    And how all of this still wasn't enough for a success.
+                </aside>
+            </section>
+            <section>
+                <h2>Spoiler Alert</h2>
+                <blockquote class="fragment fade-left">
+                    &ldquo;There is no failure, only learning.&rdquo;
+                </blockquote>
+                <p class="fragment fade-left">Some dude.</p>
+                <aside class="notes">
+                    Yeah, this is the story of a commercial failure.
+                    But there are some lessons you could learn from this.
+                    Let's go back in time.
+                </aside>
+            </section>
+            <section>
+                <h2>Who I am?</h2>
+                <p>Alexis Bauchu</p>
+                <ul>
+                    <li class="fragment fade-left">2007-2009: ENJMIN</li>
+                    <li class="fragment fade-left">2010-2015: Pretty Simple</li>
+                    <li class="fragment fade-left">2015-2018: Days of Wonder / Asmodee Digital</li>
+                    <li class="fragment fade-left">2018-today: Butokaï</li>
+                </ul>
+                <aside class="notes">
+                    I'm Alexis Bauchu, I graduated from ENJMIN as a programmer in 2009.
+                    I worked for about 5 years for Pretty Simple making casual games for FB and mobile.
+                    I went on to develop tools at Days of Wonder, to help make tabletop games.
+                    And finally I co-founded Butokaï with my friend Constantin.
+                </aside>
+            </section>
+            <section>
+                <h2>The Origins</h2>
+                <p class="fragment fade-right" style="text-align: left; color:lightgrey;">
+                    <b>C</b>: <i>Hey, is it hard to code a story game?</i>
+                </p>
+                <p class="fragment fade-left" style="text-align: left;">
+                    <b>A</b>: <i>Not really, why?</i>
+                </p>
+                <p class="fragment fade-right" style="text-align: left; color:lightgrey;">
+                    <b>C</b>: <i>Coz you and I are now making a game!</i>
+                </p>
+                <p class="fragment fade-left" style="text-align: left;">
+                    <b>A</b>: <i>Wow, OK!</i>
+                </p>
+                <aside class="notes">
+                    Constant was a writer at Pretty Simple.
+                    One day he came to me, and that's roughly how it went: (read conversation).
+                    He had worked for a japanese company making otome games and
+                    found the production value lacking. He thought of all the nice
+                    people he worked with in the past and thought he could build up
+                    a team to make his own otome game.
+                </aside>
+            </section>
+            <section>
+                <h2>The market at the time</h2>
+                <p>Few games translated to French, except:</p>
+                <ul>
+                    <li>It it Love? (1492)</li>
+                    <li>(Tictales)</li>
+                    <li>Amour Sucré (Beemoov)</li>
+                </ul>
+                <aside class="notes">
+                    We studied what the market was offering: lots of games in english,
+                    often poorly translated from another language. Rarely in French.
+                    The quality varied a lot, most games looking fan-made.
+                    Some had great main characters, like Is it Love, but usually
+                    they had really poor backgrounds and worst UIs.
+                </aside>
+            </section>
+            <section>
+                <h2>Some numbers</h2>
+                <p>Is it Love stats in 2016</p>
+                <aside class="notes">
+                    Despite the poor production value, those games were selling.
+                    Thanks to great cast of characters and themes, and ease of use.
+                    We thought: we can do even better than this.
+                </aside>
+            </section>
+            <section>
+                <h2>The Concept</h2>
+                <ul>
+                    <li>Mainly female audience</li>
+                    <li>Hot BoyZ!!</li>
+                    <li>Paris</li>
+                    <li>Modern Day, relatable environment</li>
+                    <li>Phone mode</li>
+                    <li>Pretty graphics</li>
+                    <li>"Straight to the point" story</li>
+                </ul>
+                <aside class="notes">
+                    So we started discussing what we wanted for the game.
+                    From our competitors we kept: a female audience target,
+                    the cast of cute boys surrounded by likable friends.
+                    But we wanted to add a family aspect, give the whole thing a
+                    "village feeling" (Plus belle la vie).
+                    We also wanted to propose a different theme than the over used
+                    business office romance, school drama and heroic-fantasy romance.
+                    And we settled for: first job at a bakery in a charming neightboorhood.
+                    We also wanted to paint a beautiful Paris. The one people see
+                    in movies, not the actual one of course 😜
+                </aside>
+            </section>
+            <section>
+                <h2>The artists</h2>
+                <ul>
+                    <li>
+                        <a href="https://www.instagram.com/roonie_arts/">Leatitia Minguez</a>: the charming boys
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/veroni_kdoodles">Veronique Dobarro</a>: characters and
+                        illustrations
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/robinlhebrard/">Robin Lhebrard</a>: backgrounds
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/caroarrondelle/">Caroline Arrondelle</a>: UI and Logo
+                    </li>
+                    <li>
+                        <a href="https://www.sound-fishing.net/compositeurs.html">MrKey</a>: Music
+                    </li>
+                </ul>
+                <aside class="notes">
+                    So in 2017 we started to assemble a crew of artists to help
+                    us make the game real. You should go check-out their online content,
+                    they are great.
+                </aside>
+            </section>
+            <section>
+                <h2>Thank you!</h2>
+            </section>
+            <section>
+                <h2>Questions?</h2>
+            </section>
+            <section>
+                <h2>Contact</h2>
+                <ul>
+                    <li>Slides:
+                        <a href="https://Albob.github.io/egc-2020" target="_blank">Albob.github.io/egc-2020</a>
+                    </li>
+                    <li>LinkedIn:
+                        <a href=" https://www.linkedin.com/in/alexisbauchu/" target="_blank">/in/alexisbauchu/</a>
+                    </li>
+                    <li>Twitter:
+                        <a href=" https://twitter.com/abauchu" target="_blank">@abauchu</a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            showSlideNumber: 'speaker',
+
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        });
+    </script>
+</body>
+
 </html>
